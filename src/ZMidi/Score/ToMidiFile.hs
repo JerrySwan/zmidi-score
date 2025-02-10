@@ -17,7 +17,7 @@ import Data.Maybe          ( mapMaybe )
 import Data.List           ( genericLength, sort )
 import Control.Monad.State ( State, get, evalState, put )
 
-import GHC.Float           ( integerLogBase )
+import GHC.Num           ( integerLogBase )
 
 import ZMidi.Core          ( MidiFile (..), MidiEvent (..), DeltaTime
                            , MidiVoiceEvent (..), MidiMetaEvent (..)

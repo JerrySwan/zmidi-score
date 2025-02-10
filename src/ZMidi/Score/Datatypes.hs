@@ -305,8 +305,8 @@ instance (Integral a, ToJSON a) => ToJSON (Ratio a) where
 #endif
 
 instance ToJSON (TimeSig) where
-     toJSON (TimeSig n d _ _) = object [pack "ts_num" .= n, pack "ts_den" .= d]
-     toJSON NoTimeSig         = object [pack "ts" .= pack "none"]     
+--     toJSON (TimeSig n d _ _) = object [pack "ts_num" .= n, pack "ts_den" .= d]
+--     toJSON NoTimeSig         = object [pack "ts" .= pack "none"]     
 
 instance FromJSON Beat
 instance FromJSON BeatRat
@@ -319,7 +319,6 @@ instance (Integral a, FromJSON a) => FromJSON (Ratio a) where
 #endif
      
 instance FromJSON (TimeSig) where
-     parseJSON (Object v) =  (\n d -> TimeSig n d 0 0) 
-                          <$> v .: (pack "ts_num") <*> v .: (pack "ts_den") 
-                          
-     parseJSON _          = mzero
+--     parseJSON (Object v) =  (\n d -> TimeSig n d 0 0) <$> v .: (pack "ts_num") <*> v .: (pack "ts_den")
+ --    parseJSON _          = mzero
+
